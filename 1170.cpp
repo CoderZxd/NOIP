@@ -19,7 +19,7 @@ using namespace std;
 int main(){
     int N=0;
     cin >> N;
-    int a[105]={1};
+    int a[100]={1};
     int len = 1;
     for(int i=1;i<=N;i++){
         int carry = 0;
