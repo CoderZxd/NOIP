@@ -21,18 +21,24 @@
 using namespace std;
 
 int main(){
+    //接收第一行的输入n
     int n;
     cin>>n;
+    //数组中的数大于-50且小于50，所以不超过100个数；-49存在数组下标为1的位置，0存在下标为50的位置，49存在下标为99的位置
     int a[100] = {};
     int temp;
+    //循环接收n个第二行的每一个整数
     for(int i=0;i<n;i++){
         cin>>temp;
+        //设置当前数出现的次数
         a[temp+50]++;
+        //如果当前数出现次数过半，直接输出结果，终止循环
         if(a[temp+50]>n/2){
             cout<<temp<<endl;
             goto skip;
         }
     }
+    //没有出现过半情况则输出"no"
     cout<<"no"<<endl;
     skip:
     return 0;
