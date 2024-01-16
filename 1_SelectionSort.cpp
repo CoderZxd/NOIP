@@ -22,12 +22,38 @@ void selection_sort(int* a,int n){
                 min = j;
             }
         }
+        /******************************控制台输出逻辑--开始*******************************/
+        for(int j=0;j<n;j++){
+            cout<<a[j]<<" ";
+        }
+        cout<<endl;
+        for(int j=0;j<n;j++){
+            if(i == min && j==i){
+                cout<<"|";
+            }else{
+                if(j==i){
+                    cout<<"|-";
+                }
+                if(j==min){
+                    cout<<"|";
+                }
+            }
+            if(j<i){
+                cout<<"  ";
+            }
+            if(j>i && j<min){
+                cout<<"--";
+            }
+        }
+        cout<<endl;
+        cout<<endl;
+        /******************************控制台输出逻辑--结束*******************************/
         std::swap(a[i],a[min]);
     }
 }
 
 int main(){
-    int a[10] = {8,2,6,3,10,9,4,1,7,5};
-    selection_sort(a,10);
+    int a[9] = {8,2,6,3,9,4,1,7,5};
+    selection_sort(a,9);
     return 0;
 }
