@@ -36,6 +36,37 @@ void bubble_sort(int* a,int n){
     }
 }
 
+void bubble_sort_print(int* a,int n){
+    for(int i=0;i<n;i++){
+        printf("-------i=%d-------\n",i);
+        for(int j=0;j<n-i-1;j++){
+            /******************************控制台输出逻辑--开始*******************************/
+            for(int m=0;m<n;m++){
+                cout<<a[m]<<" ";
+            }
+            cout<<endl;
+            for(int m=0;m<=j+1;m++){
+                if(m != j){
+                    cout<<"  ";
+                }
+                if(m ==j){
+                    cout<<"|-|";
+                }
+            }
+            cout<<endl;
+            /******************************控制台输出逻辑--结束*******************************/
+            if(a[j]>a[j+1]){
+                std::swap(a[j],a[j+1]);
+            }
+        }
+        cout<<"======= ↓ ======="<<endl;
+        for(int m=0;m<n;m++){
+            cout<<a[m]<<" ";
+        }
+        cout<<endl;
+    }
+}
+
 //如果在一次遍历过程中没有发生过交换，那么意味着序列已经是有序的，不需要继续排序。
 //可以通过设置一个标记来优化算法。如果在某次遍历中没有发生交换，则直接结束排序。
 void bubble_sort_optimize(int* a,int n){
@@ -55,8 +86,8 @@ void bubble_sort_optimize(int* a,int n){
 }
 
 int main(){
-    int a[10] = {8,2,6,3,10,9,4,1,7,5};
-//    bubble_sort(a,10);
-    bubble_sort_optimize(a,10);
+    int a[9] = {8,2,6,3,9,4,1,7,5};
+    bubble_sort(a,9);
+//    bubble_sort_optimize(a,9);
     return 0;
 }
